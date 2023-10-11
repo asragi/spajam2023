@@ -19,7 +19,13 @@ public class DevVibration : MonoBehaviour
     public void OnClick() {
         _logger.Log("Click vibration button");
         var vibrate = new RVibration();
-        vibrate.VibrateLong();
+        try {
+            // vibrate.VibrateLong();
+            vibrate.VibrateShort();
+
+        } catch (System.Exception e) {
+            _logger.Log(e.ToString());
+        }
         if (!SystemInfo.supportsVibration) {
             _logger.Log("vibration not supported");
         }
