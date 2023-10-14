@@ -18,6 +18,9 @@ public class DevAcceralation : MonoBehaviour
     {
         _acc.Update();
         var check = _acc.CheckShake();
-        // _logger.Log(check.ToString());
+        if (check)
+        {
+            _logger.Log("Shake!");
+        }
     }
 }
