@@ -8,7 +8,7 @@ public class DevHttp : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        _http = new RHttp(_logger);
+        _http = new RHttp(_logger.Log, _logger.Log);
         
     }
     void Start()
