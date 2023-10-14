@@ -1,25 +1,23 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GetSeasons : MonoBehaviour
+public class GetAchieves : MonoBehaviour
 {
     private RHttp _http;
     void Awake()
     {
         _http = new(OnComplete, OnError);
-        Get();
+        Get(1);
     }
 
-    public void Get()
+    public void Get(int user_id)
     {
-        StartCoroutine(_http.Get(EndPoint.SeasonURL));
+        StartCoroutine(_http.Get($"{EndPoint.AchievementURL}?user_id={user_id}"));
     }
 
     private void OnComplete(string body)
     {
-        var res = JsonUtility.FromJson<GetSeasonResponse>(body);
-        foreach (var item in res.seasons) {
+        var res = JsonUtility.FromJson<GetAchievementResponse>(body);
+        foreach (var item in res.achievements) {
             Debug.Log(item.name);
         }
     }
