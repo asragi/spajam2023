@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // TODO: secrets‚ğScriptableObject‚ÅŠÇ—‚µ‚Ä‚æ‚¢‚í‚¯‚ª‚È‚¢
