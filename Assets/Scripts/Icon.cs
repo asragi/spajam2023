@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Icon : MonoBehaviour
 {
     [SerializeField]
-    Sprite _icon;
+    Image _icon;
+    [SerializeField]
+    IconDict _dict;
 
     public void Initialize(int foodId)
     {
-        
+        _icon.sprite = _dict.Get(foodId);
     }
 }

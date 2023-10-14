@@ -17,6 +17,8 @@ public class TalkMono : MonoBehaviour
     [SerializeField]
     Icon _icon;
 
+    Animator _animator;
+
 
     public void Initialize(
         List<Message> messages,
@@ -33,5 +35,8 @@ public class TalkMono : MonoBehaviour
 
         _foodName.text = name;
         _icon.Initialize(foodId);
+
+        _animator = GetComponent<Animator>();
+        _animator.SetTrigger("in");
     }
 }

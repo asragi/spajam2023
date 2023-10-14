@@ -8,6 +8,8 @@ public class MessageOutline: MonoBehaviour
     Text _nameText;
     [SerializeField]
     Text _messageText;
+    [SerializeField]
+    Icon _icon;
 
     private Action _onClick;
 
@@ -16,6 +18,7 @@ public class MessageOutline: MonoBehaviour
         _nameText.text = $"@{message.Writer}";
         _messageText.text = message.Text;
         _onClick = onClick;
+        _icon.Initialize(message.FoodId);
     }
 
     public void OnClick()

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2086855800150680948
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144688627873870311}
+  - component: {fileID: 460854473206093646}
+  m_Layer: 0
+  m_Name: SpriteDict
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2144688627873870311
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086855800150680948}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 319.93326, y: 612.61426, z: 1.2018323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &460854473206093646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086855800150680948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c1d366342e4b24a8d4c48d6aa538d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dictionary:
+  - sprite: {fileID: 21300000, guid: 0295f6bd5b3183d4db2ffb5d32c5178e, type: 3}
+    foodId: 1
+  - sprite: {fileID: 21300000, guid: 0cc4720bf1fedd04f85e899041a2e17c, type: 3}
+    foodId: 2
+  - sprite: {fileID: 21300000, guid: 579539d061a83ae4d94eb799e7684d1f, type: 3}
+    foodId: 3
+  - sprite: {fileID: 21300000, guid: ebcc77c84e74fae47b8e8aec0a89f26a, type: 3}
+    foodId: 4
+  - sprite: {fileID: 21300000, guid: 067967d1d4ba0eb4ba70253514c409c1, type: 3}
+    foodId: 5
+  - sprite: {fileID: 21300000, guid: 397086c2e5cc0f1468458a3c977c82c6, type: 3}
+    foodId: 6
+  - sprite: {fileID: 21300000, guid: 329878331f16fab4497de9587c192945, type: 3}
+    foodId: 7
+  - sprite: {fileID: 21300000, guid: 3b6d37e72165a4f4ba1c5ddec245f257, type: 3}
+    foodId: 8
+  - sprite: {fileID: 21300000, guid: dd6df9d26839941488608ff95137c723, type: 3}
+    foodId: 9
+  - sprite: {fileID: 21300000, guid: 4f1e21f4e5e2df04990aa095ffa074c7, type: 3}
+    foodId: 10
+  - sprite: {fileID: 21300000, guid: e9837bd5336791245890172a80c5c757, type: 3}
+    foodId: 11
+  - sprite: {fileID: 21300000, guid: 063f7285e9975054889e0c3c04ca416e, type: 3}
+    foodId: 12
+  - sprite: {fileID: 21300000, guid: 33b78b593c453a048ab48dd5cca414aa, type: 3}
+    foodId: 13
+  - sprite: {fileID: 21300000, guid: d3687c088b7bab34baa230dbf4e881da, type: 3}
+    foodId: 14
+  - sprite: {fileID: 21300000, guid: af732feabdc5b144eac9e5a924320b0d, type: 3}
+    foodId: 15
+  - sprite: {fileID: 21300000, guid: 633b28ffe7f01b34faa2132d7da693d0, type: 3}
+    foodId: 16
+  - sprite: {fileID: 21300000, guid: 0711c26163404584eb65e13a4021b18f, type: 3}
+    foodId: 17
+  - sprite: {fileID: 21300000, guid: bc9725664c4e587439ea63f3b282d7eb, type: 3}
+    foodId: 18
+  - sprite: {fileID: 21300000, guid: ed02351646d8b0d4d91eb5ee734fed95, type: 3}
+    foodId: 19
+  - sprite: {fileID: 21300000, guid: 8511ef6c7adbb234eb3f80b93bd87b99, type: 3}
+    foodId: 20
+  - sprite: {fileID: 21300000, guid: b3ff776796a05f9458a4869337ade69d, type: 3}
+    foodId: 21
+  - sprite: {fileID: 21300000, guid: 60c8ac0570e6a16438e69d7fb12f807c, type: 3}
+    foodId: 22
+  - sprite: {fileID: 21300000, guid: 8ba6787dd3103e84eae9a8b67ce6e0b3, type: 3}
+    foodId: 23
+  - sprite: {fileID: 21300000, guid: 57d3e585aa9db8e4ea025d5e97257b7b, type: 3}
+    foodId: 24
