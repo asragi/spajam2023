@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class GetMessages : MonoBehaviour
 {
     private RHttp _http;
-    void Awake()
+    private Action<GetMessageResponse> _onComplete;
+
+    public void Initialize(Action<GetMessageResponse> onComplete)
     {
+        _onComplete = onComplete;
         _http = new(OnComplete, OnError);
-        Get(1);
     }
 
     public void Get(int user_id)
@@ -17,9 +20,7 @@ public class GetMessages : MonoBehaviour
     private void OnComplete(string body)
     {
         var res = JsonUtility.FromJson<GetMessageResponse>(body);
-        foreach (var item in res.messages) {
-            Debug.Log(item.text);
-        }
+        _onComplete(res);
     }
 
     private void OnError(string message) {

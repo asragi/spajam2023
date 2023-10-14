@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class GetSeasons : MonoBehaviour
 {
     private RHttp _http;
-    void Awake()
+    private Action<GetSeasonResponse> _onComplete;
+
+    public void Initialize(Action<GetSeasonResponse> onComplete)
     {
+        _onComplete = onComplete;
         _http = new(OnComplete, OnError);
-        Get();
     }
 
     public void Get()
@@ -19,9 +20,7 @@ public class GetSeasons : MonoBehaviour
     private void OnComplete(string body)
     {
         var res = JsonUtility.FromJson<GetSeasonResponse>(body);
-        foreach (var item in res.seasons) {
-            Debug.Log(item.name);
-        }
+        _onComplete(res);
     }
 
     private void OnError(string message) {
