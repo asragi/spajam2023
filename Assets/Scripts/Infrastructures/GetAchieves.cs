@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
 public class GetAchieves : MonoBehaviour
 {
     private RHttp _http;
-    void Awake()
+    private Action<GetAchievementResponse> _onComplete;
+
+    public void Initialize(Action<GetAchievementResponse> onComplete)
     {
+        _onComplete = onComplete;
         _http = new(OnComplete, OnError);
-        Get(1);
     }
 
     public void Get(int user_id)
@@ -17,9 +20,7 @@ public class GetAchieves : MonoBehaviour
     private void OnComplete(string body)
     {
         var res = JsonUtility.FromJson<GetAchievementResponse>(body);
-        foreach (var item in res.achievements) {
-            Debug.Log(item.name);
-        }
+        _onComplete(res);
     }
 
     private void OnError(string message) {

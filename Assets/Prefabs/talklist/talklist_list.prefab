@@ -243,6 +243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4639471887837010203}
   - component: {fileID: 7918959435307795694}
+  - component: {fileID: 970031672669120391}
   m_Layer: 31
   m_Name: talklist_list
   m_TagString: Untagged
@@ -278,6 +279,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2041640492023347493}
   m_CullTransparentMesh: 1
+--- !u!114 &970031672669120391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041640492023347493}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2be292e5ce53fd42b1cd52189930f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _nameText: {fileID: 2333835233053926543}
+  _messageText: {fileID: 6144989506176325346}
 --- !u!1 &4450582247156562425
 GameObject:
   m_ObjectHideFlags: 0
