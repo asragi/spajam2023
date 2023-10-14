@@ -11,10 +11,6 @@ public class TalkBalloon : MonoBehaviour
     public void Initialize(string text)
     {
         _text.text = text;
-        if (_icon != null )
-        {
-
-        }
     }
 
     public void SetIcon(int id)

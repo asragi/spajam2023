@@ -106,7 +106,7 @@ public class DeployData : MonoBehaviour
                 foodId,
                 foodNameDict[foodId],
                 message.text,
-                false
+                message.is_user
                 );
             messageDict[foodId].Add(m);
         }
