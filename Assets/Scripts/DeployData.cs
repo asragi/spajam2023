@@ -13,6 +13,8 @@ public class DeployData : MonoBehaviour
     Transform _achievedTab;
     [SerializeField]
     MessageOutline _outlinePrefab;
+    [SerializeField]
+    TalkMono _talkMono;
 
     private GetMessages _getMessages;
     private GetAchieves _getAchieves;
@@ -92,6 +94,7 @@ public class DeployData : MonoBehaviour
 
         var messages = _messages.messages;
         var messageDict = new Dictionary<int, List<Message>>();
+
         foreach ( var message in messages )
         {
             var foodId = message.food_id;
@@ -108,34 +111,43 @@ public class DeployData : MonoBehaviour
             messageDict[foodId].Add(m);
         }
 
+        Action CreateOnClick(int foodId, string name)
+        {
+            var messages = messageDict[foodId];
+            return () => _talkMono.Initialize(messages, foodId, name);
+        }
+
         foreach( var seasonFood in seasonFoods )
         {
             var foodId = seasonFood.FoodId;
+            var name = foodNameDict[foodId];
             if (!messageDict.ContainsKey(foodId))
                 continue;
             var lastMessage = messageDict[foodId].First();
             var obj = Instantiate(_outlinePrefab, _seasonTab);
-            obj.Initialize(lastMessage);
+            obj.Initialize(lastMessage, CreateOnClick(foodId, name));
         }
 
         foreach ( var achieved in achievedFoodIds )
         {
             var foodId = achieved;
+            var name = foodNameDict[foodId];
             if (!messageDict.ContainsKey(foodId))
                 continue;
             var lastMessage = messageDict[foodId].First();
             var obj = Instantiate(_outlinePrefab, _achievedTab);
-            obj.Initialize(lastMessage);
+            obj.Initialize(lastMessage, CreateOnClick(foodId, name));
         }
         
         foreach ( var s in seasons )
         {
             var foodId = s.id;
+            var name = foodNameDict[foodId];
             if (!messageDict.ContainsKey(foodId))
                 continue;
             var lastMessage = messageDict[foodId].First();
             var obj = Instantiate(_outlinePrefab, _allTab);
-            obj.Initialize(lastMessage);
+            obj.Initialize(lastMessage, CreateOnClick(foodId, name));
         }
     }
 }
