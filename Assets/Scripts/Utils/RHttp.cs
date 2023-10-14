@@ -27,4 +27,16 @@ public class RHttp
 
         _onComplete(req.downloadHandler.text);
     }
+
+    public IEnumerator Post(string myJson, string url)
+    {
+        byte[] postData = System.Text.Encoding.UTF8.GetBytes(myJson);
+        var request = new UnityWebRequest(url, "POST")
+        {
+            uploadHandler = new UploadHandlerRaw(postData),
+            downloadHandler = new DownloadHandlerBuffer()
+        };
+        request.SetRequestHeader("Content-Type", "application/json");
+        yield return request.Send();
+    }
 }
