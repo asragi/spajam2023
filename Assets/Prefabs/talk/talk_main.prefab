@@ -2982,6 +2982,7 @@ GameObject:
   - component: {fileID: 8826324169365963568}
   - component: {fileID: 6544904685745616612}
   - component: {fileID: 3709990067114103891}
+  - component: {fileID: 5360443422045074974}
   m_Layer: 0
   m_Name: icon
   m_TagString: Untagged
@@ -3046,6 +3047,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5360443422045074974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6818146912842599833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabfdb39388ecb54f8639f3cb2af9a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 3709990067114103891}
+  _dict: {fileID: 460854473206093646, guid: afa65db755d6edc40b95aa1d2bf325df, type: 3}
 --- !u!1 &6974199378092700133
 GameObject:
   m_ObjectHideFlags: 0
@@ -3136,6 +3151,7 @@ GameObject:
   - component: {fileID: 4413978370979784225}
   - component: {fileID: 1208905675570265044}
   - component: {fileID: 7877964980399054715}
+  - component: {fileID: 1937226040746189265}
   m_Layer: 31
   m_Name: talk_main
   m_TagString: Untagged
@@ -3196,6 +3212,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1937226040746189265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022928062852662815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aee01474df9b0a4d9149147eba434d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messageParent: {fileID: 2471806186069361188}
+  _userBalloon: {fileID: 1164336452484486561, guid: 4882a82068af7424585e60e60ffe2cc4, type: 3}
+  _foodBalloon: {fileID: 6705802749580220239, guid: a7b5ec3acd5cdec468f2ebb732edfa30, type: 3}
+  _foodName: {fileID: 2260773953457417783}
+  _icon: {fileID: 5360443422045074974}
 --- !u!1 &7207908647784882502
 GameObject:
   m_ObjectHideFlags: 0

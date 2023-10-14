@@ -26,10 +26,17 @@ public class TalkMono : MonoBehaviour
         string name
         )
     {
+        foreach ( Transform child in _messageParent ) {
+            Destroy(child.gameObject);
+        }
         foreach (Message m in messages)
         {
             var prefab = m.IsUser ? _userBalloon : _foodBalloon;
             var obj = Instantiate(prefab, _messageParent);
+            if (!m.IsUser)
+            {
+                obj.SetIcon(foodId);
+            }
             obj.Initialize(m.Text);
         }
 

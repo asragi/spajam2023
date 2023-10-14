@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5917170800220296776}
   - component: {fileID: 3459631380710891283}
   - component: {fileID: 1096323304026650628}
+  - component: {fileID: 7426541037987396911}
   m_Layer: 31
   m_Name: icon
   m_TagString: Untagged
@@ -75,6 +76,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7426541037987396911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592168830602363512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabfdb39388ecb54f8639f3cb2af9a5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _icon: {fileID: 1096323304026650628}
+  _dict: {fileID: 460854473206093646, guid: afa65db755d6edc40b95aa1d2bf325df, type: 3}
 --- !u!1 &2621122598081101559
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,6 +357,7 @@ GameObject:
   - component: {fileID: 788934277244842153}
   - component: {fileID: 5735466612650890203}
   - component: {fileID: 2326148115242879354}
+  - component: {fileID: 6705802749580220239}
   m_Layer: 31
   m_Name: talk_message_partner
   m_TagString: Untagged
@@ -448,6 +464,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &6705802749580220239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960740322445364149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6179edd7616c2ba4099da0f4f4ce80c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 1240300713631197406}
+  _icon: {fileID: 7426541037987396911}
 --- !u!1 &8547151792497022897
 GameObject:
   m_ObjectHideFlags: 0
