@@ -2761,6 +2761,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4413978370979784225}
   - component: {fileID: 1208905675570265044}
+  - component: {fileID: 7877964980399054715}
   m_Layer: 31
   m_Name: talk_main
   m_TagString: Untagged
@@ -2799,6 +2800,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7022928062852662815}
   m_CullTransparentMesh: 1
+--- !u!95 &7877964980399054715
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7022928062852662815}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 311146cebc65fcb4eaab7eea40a9563c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7207908647784882502
 GameObject:
   m_ObjectHideFlags: 0
@@ -2918,7 +2941,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4804149065978874115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7877964980399054715}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: out
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7310168880226072421
 GameObject:
   m_ObjectHideFlags: 0

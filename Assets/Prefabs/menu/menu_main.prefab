@@ -806,7 +806,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3362695972957914545}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7364009243365746131}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: out
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7296700289410636531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,8 +1151,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3367505174938795232}
   m_HandleRect: {fileID: 2324086992855791833}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.8835755
+  m_Value: 0
+  m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1380,6 +1392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2332117165263751960}
   - component: {fileID: 998150447203309293}
+  - component: {fileID: 7364009243365746131}
   m_Layer: 31
   m_Name: menu_main
   m_TagString: Untagged
@@ -1419,3 +1432,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8965173827333417766}
   m_CullTransparentMesh: 1
+--- !u!95 &7364009243365746131
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8965173827333417766}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 616c00add27e03c409cee861457af1cf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
