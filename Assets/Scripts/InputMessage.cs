@@ -43,7 +43,7 @@ public class InputMessage: MonoBehaviour
         _sendText = text;
         _inputField.text = "";
         // Post Message
-        _postMessages.Post(new(userId, foodId, text));
+        _postMessages.Post(new(userId, foodId, text, true));
         _isFinish = false;
     }
 
@@ -70,7 +70,7 @@ public class InputMessage: MonoBehaviour
         {
             if (!shouldPost) return;
             shouldPost = false;
-            _postMessages.Post(new(userId, foodId, gptAnswer));
+            _postMessages.Post(new(userId, foodId, gptAnswer, false));
             _isFinish = true;
         }
     }
