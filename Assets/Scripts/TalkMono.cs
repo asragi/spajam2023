@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class TalkMono : MonoBehaviour
     TalkBalloon _userBalloon;
     [SerializeField]
     TalkBalloon _foodBalloon;
+    [SerializeField]
+    InputMessage _inputMessage;
 
     [SerializeField]
     Text _foodName;
@@ -21,11 +24,26 @@ public class TalkMono : MonoBehaviour
 
 
     public void Initialize(
+        int userId,
         List<Message> messages,
         int foodId,
-        string name
+        string name,
+        Action refresh
         )
     {
+        Refresh(messages, foodId);
+        _foodName.text = name;
+        _icon.Initialize(foodId);
+
+        _animator = GetComponent<Animator>();
+        _animator.SetTrigger("in");
+
+        _inputMessage.Initialize(userId, foodId, name, refresh);
+    }
+
+    public void Refresh(List<Message> messages, int foodId)
+    {
+        Debug.Log("RELOAD!!!");
         foreach ( Transform child in _messageParent ) {
             Destroy(child.gameObject);
         }
@@ -39,11 +57,5 @@ public class TalkMono : MonoBehaviour
             }
             obj.Initialize(m.Text);
         }
-
-        _foodName.text = name;
-        _icon.Initialize(foodId);
-
-        _animator = GetComponent<Animator>();
-        _animator.SetTrigger("in");
     }
 }
