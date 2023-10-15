@@ -765,6 +765,8 @@ GameObject:
   - component: {fileID: 4405384196147477081}
   - component: {fileID: 7689114338293515651}
   - component: {fileID: 2761555137460247269}
+  - component: {fileID: 1174136528233606463}
+  - component: {fileID: 3733575239334023608}
   m_Layer: 0
   m_Name: InputField (Legacy)
   m_TagString: Untagged
@@ -884,7 +886,19 @@ MonoBehaviour:
   m_CharacterLimit: 0
   m_OnSubmit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1174136528233606463}
+        m_TargetAssemblyTypeName: InputMessage, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnDidEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -899,6 +913,32 @@ MonoBehaviour:
   m_CaretWidth: 1
   m_ReadOnly: 0
   m_ShouldActivateOnSelect: 1
+--- !u!114 &1174136528233606463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568977167732291865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285f1a8d453dc3145acccdf98ce4836f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _secrets: {fileID: 11400000, guid: 80928ae881c6f51439a9bd187b24a907, type: 2}
+  _gptPostMessages: {fileID: 8841120513023218648}
+--- !u!114 &3733575239334023608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2568977167732291865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb281391fae49364dbf5a32a121854f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2618453185895536642
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,6 +2784,7 @@ GameObject:
   - component: {fileID: 5080884608207422877}
   - component: {fileID: 2108142950175040289}
   - component: {fileID: 5896172304915973682}
+  - component: {fileID: 8841120513023218648}
   m_Layer: 0
   m_Name: text_base
   m_TagString: Untagged
@@ -2823,6 +2864,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: 0, y: 0, z: 30, w: 0}
   m_Softness: {x: 0, y: 0}
+--- !u!114 &8841120513023218648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5857280288607488004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb281391fae49364dbf5a32a121854f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6499133433006917980
 GameObject:
   m_ObjectHideFlags: 0
@@ -3227,6 +3280,7 @@ MonoBehaviour:
   _messageParent: {fileID: 2471806186069361188}
   _userBalloon: {fileID: 1164336452484486561, guid: 4882a82068af7424585e60e60ffe2cc4, type: 3}
   _foodBalloon: {fileID: 6705802749580220239, guid: a7b5ec3acd5cdec468f2ebb732edfa30, type: 3}
+  _inputMessage: {fileID: 1174136528233606463}
   _foodName: {fileID: 2260773953457417783}
   _icon: {fileID: 5360443422045074974}
 --- !u!1 &7207908647784882502
@@ -3394,7 +3448,7 @@ RectTransform:
   m_Father: {fileID: 2540303560313845816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 5, y: 0}
   m_SizeDelta: {x: 10, y: 38}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -3727,7 +3781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &631550779420874403
 RectTransform:
   m_ObjectHideFlags: 0

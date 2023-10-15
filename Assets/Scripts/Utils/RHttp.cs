@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine.Networking;
 
 public class RHttp
@@ -30,6 +31,7 @@ public class RHttp
 
     public IEnumerator Post(string myJson, string url)
     {
+        UnityEngine.Debug.Log($"POSTJSON:{myJson}");
         byte[] postData = System.Text.Encoding.UTF8.GetBytes(myJson);
         var request = new UnityWebRequest(url, "POST")
         {
@@ -37,6 +39,7 @@ public class RHttp
             downloadHandler = new DownloadHandlerBuffer()
         };
         request.SetRequestHeader("Content-Type", "application/json");
+        _onComplete("");
         yield return request.Send();
     }
 }

@@ -114,7 +114,7 @@ public class DeployData : MonoBehaviour
         Action CreateOnClick(int foodId, string name)
         {
             var messages = messageDict[foodId];
-            return () => _talkMono.Initialize(messages, foodId, name);
+            return () => _talkMono.Initialize(_userClient.UserId, messages, foodId, name);
         }
 
         foreach( var seasonFood in seasonFoods )

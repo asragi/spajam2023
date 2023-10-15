@@ -11,6 +11,8 @@ public class TalkMono : MonoBehaviour
     TalkBalloon _userBalloon;
     [SerializeField]
     TalkBalloon _foodBalloon;
+    [SerializeField]
+    InputMessage _inputMessage;
 
     [SerializeField]
     Text _foodName;
@@ -21,6 +23,7 @@ public class TalkMono : MonoBehaviour
 
 
     public void Initialize(
+        int userId,
         List<Message> messages,
         int foodId,
         string name
@@ -45,5 +48,7 @@ public class TalkMono : MonoBehaviour
 
         _animator = GetComponent<Animator>();
         _animator.SetTrigger("in");
+
+        _inputMessage.Initialize(userId, foodId, name);
     }
 }
