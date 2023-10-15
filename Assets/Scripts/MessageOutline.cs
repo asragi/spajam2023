@@ -10,6 +10,8 @@ public class MessageOutline: MonoBehaviour
     Text _messageText;
     [SerializeField]
     Icon _icon;
+    [SerializeField]
+    GameObject _notify;
 
     private Action _onClick;
 
@@ -19,6 +21,13 @@ public class MessageOutline: MonoBehaviour
         _messageText.text = message.Text;
         _onClick = onClick;
         _icon.Initialize(message.FoodId);
+
+        // for presentation
+        int id = message.FoodId;
+        if (id == 1 || id == 4)
+        {
+            _notify.SetActive(true);
+        }
     }
 
     public void OnClick()

@@ -310,6 +310,7 @@ MonoBehaviour:
   _nameText: {fileID: 2333835233053926543}
   _messageText: {fileID: 6144989506176325346}
   _icon: {fileID: 5173526786116130502}
+  _notify: {fileID: 5735306912673309282}
 --- !u!114 &4636772833464560317
 MonoBehaviour:
   m_ObjectHideFlags: 0
