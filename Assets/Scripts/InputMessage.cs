@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,15 +17,19 @@ public class InputMessage: MonoBehaviour
     bool _isPosted;
     bool _isFinish = true;
 
+    Action _refresh;
+
 
     public void Initialize(
         int userId,
         int foodId,
-        string name
+        string name,
+        Action refresh
         )
     {
         this.userId = userId;
         this.foodId = foodId;
+        _refresh = refresh;
         _inputField = GetComponent<InputField>();
         _postMessages = GetComponent<PostMessages>();
         _postMessages.Initialize(OnPostMessage);
@@ -85,6 +90,6 @@ public class InputMessage: MonoBehaviour
 
     private void Refresh()
     {
-
+        _refresh();
     }
 }

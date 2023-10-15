@@ -45,6 +45,7 @@ public class DeployData : MonoBehaviour
 
     private void Update()
     {
+        Reload();
         if (!_inFetch) return;
         if (!_didMessageFetched || !_didAchievesFetched || !_didSeasonFetched) return;
         _inFetch = false;
@@ -80,8 +81,12 @@ public class DeployData : MonoBehaviour
         _seasons = response;
     }
 
+    int nowSelectedFoodId = 1;
+    Dictionary<int, List<Message>> messageDict;
+
     private void InstantiateAll()
     {
+        ClearAll();
         var currentTime = DateTime.Now;
         var seasons = _seasons.seasons;
         var seasonModels = seasons.Select(s => new Season(s.id, s.start_at, s.end_at));
@@ -93,7 +98,7 @@ public class DeployData : MonoBehaviour
         var achievedFoodIds = achievements.Select(s => s.id).ToArray();
 
         var messages = _messages.messages;
-        var messageDict = new Dictionary<int, List<Message>>();
+        messageDict = new();
 
         foreach ( var message in messages )
         {
@@ -114,7 +119,11 @@ public class DeployData : MonoBehaviour
         Action CreateOnClick(int foodId, string name)
         {
             var messages = messageDict[foodId];
-            return () => _talkMono.Initialize(_userClient.UserId, messages, foodId, name);
+            return () =>
+            {
+                _talkMono.Initialize(_userClient.UserId, messages, foodId, name, OnReload);
+                nowSelectedFoodId = foodId;
+            };
         }
 
         foreach( var seasonFood in seasonFoods )
@@ -149,5 +158,40 @@ public class DeployData : MonoBehaviour
             var obj = Instantiate(_outlinePrefab, _allTab);
             obj.Initialize(lastMessage, CreateOnClick(foodId, name));
         }
+
+        _talkMono.Refresh(messageDict[nowSelectedFoodId], nowSelectedFoodId);
+    }
+
+    private void ClearAll()
+    {
+        foreach (Transform t in _seasonTab.transform)
+        {
+            Destroy(t.gameObject);
+        }
+        foreach (Transform t in _allTab.transform)
+        {
+            Destroy(t.gameObject);
+        }
+        foreach (Transform t in _achievedTab.transform)
+        {
+            Destroy(t.gameObject);
+        }
+    }
+
+    private void OnReload()
+    {
+        _shouldReload = true;
+    }
+
+    bool _shouldReload;
+    int frame;
+    private void Reload()
+    {
+        if (!_shouldReload) return;
+        frame++;
+        if (frame < 30) return;
+        _shouldReload = false;
+        frame = 0;
+        RefreshAllTalk();
     }
 }
